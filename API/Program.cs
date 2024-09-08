@@ -1,3 +1,4 @@
+using API.Middleware;
 using Core.Interfaces;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
@@ -22,9 +23,10 @@ if (app.Environment.IsDevelopment())
 	
 }
 
-app.UseHttpsRedirection();
 
-app.UseAuthorization();
+// Configure HTTP pipeline
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.MapControllers();
 
