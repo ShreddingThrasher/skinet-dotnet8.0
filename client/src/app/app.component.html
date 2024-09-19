@@ -4,6 +4,7 @@
     <h2 class="text-3xl font-bold underline">Welcome to {{title}}</h2>
     <ul>
         @for (product of products;  track product.id) {
+            <li>{{product.description}}</li>
             <li>{{product.name}}</li>
         }
     </ul>
